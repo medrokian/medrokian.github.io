@@ -14,6 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+    <!-- Password Entry Form -->
+    <form id="passwordForm">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Submit</button>
+    </form>
+
     <!-- Visit Counter Code Start -->
     <h1>Visit Counter</h1>
     
@@ -85,7 +92,7 @@
 
             // Check if the password is correct
             if (password === "diabeetus") { // Password set to "diabeetus"
-                // Correct password, show "Get Started" button
+                // Correct password, hide the password form and show "Get Started" button
                 document.getElementById('passwordForm').style.display = 'none';
                 document.getElementById('getStartedText').style.display = 'block';
             } else {
