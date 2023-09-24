@@ -8,14 +8,17 @@
         // Define the correct passkey
         const correctPasskey = "diabeetus"; // Password: diabeetus
 
-        // Function to hide the password characters
-        function hidePassword() {
+        // Function to hide the password characters and reveal the content
+        function handlePasswordInput() {
             const passwordInput = document.getElementById("passkey");
             const passkey = passwordInput.value;
-            
-            // Replace each character with a dot
             const hiddenPasskey = passkey.replace(/./g, "*");
             passwordInput.value = hiddenPasskey;
+
+            if (passkey === correctPasskey) {
+                // Password is correct; reveal the main content of the site
+                revealSite();
+            }
         }
 
         // Function to reveal the main site content
@@ -27,28 +30,16 @@
             mainContent.style.display = "block";
         }
 
-        // Prompt the user for the passkey
-        const userPasskey = prompt("Enter the passkey to access " + window.location.hostname + ":");
-
-        // Check if the passkey is correct
-        if (userPasskey !== correctPasskey) {
-            // Redirect to an access denied page or show an error message
-            alert("Access denied. Please enter the correct passkey to access " + window.location.hostname + ".");
-            // Optionally, you can redirect to an access denied page
-            // window.location.href = "access_denied.html";
-        } else {
-            // Passkey is correct; reveal the main content of the site
+        // Check if the passkey is already entered (e.g., on page refresh)
+        const userPasskey = localStorage.getItem('userPasskey');
+        if (userPasskey === correctPasskey) {
+            // Password is correct; reveal the main content of the site
             revealSite();
         }
 
-        // Add an event listener to hide the password after 1.5 seconds of inactivity
+        // Add an event listener to handle password input
         const passwordInput = document.getElementById("passkey");
-        let timer;
-
-        passwordInput.addEventListener("input", function () {
-            clearTimeout(timer);
-            timer = setTimeout(hidePassword, 1500); // 1.5 seconds delay
-        });
+        passwordInput.addEventListener("input", handlePasswordInput);
     </script>
 
     <!-- Password input -->
