@@ -14,6 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+    <!-- Password Entry Form -->
+    <form id="passwordForm">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Submit</button>
+    </form>
+
     <!-- Visit Counter Code Start -->
     <h1>Visit Counter</h1>
     
@@ -44,13 +51,6 @@
         medrokian.github.io<br />
         <span id="subtitle">...</span>
     </h1>
-    
-    <!-- Password Entry Form -->
-    <form id="passwordForm">
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Submit</button>
-    </form>
 
     <p id="intro" class="text-center">
       Welcome to medrokian.github.io, your best option for unblocked games on the internet.<br />
@@ -93,10 +93,11 @@
                 window.location.href = "/rickroll.mp4";
             }
         });
+
         // Force a full page reload on manual refresh
-window.onbeforeunload = function() {
-    return true;
-}
+        window.onbeforeunload = function() {
+            return true;
+        }
     </script>
 </body>
 </html>
