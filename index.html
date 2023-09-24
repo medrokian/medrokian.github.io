@@ -14,30 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <!-- Passkey Form Start -->
-    <div id="passkeyForm">
-        <form id="passwordForm" action="/index.html"> <!-- Update the action to point to your main page -->
-            <label for="passkey">Enter Passkey:</label>
-            <input type="password" id="passkey">
+    <!-- Password Input Form Start -->
+    <div id="passwordForm">
+        <h1>Enter Password</h1>
+        <form id="passwordSubmitForm">
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Submit</button>
         </form>
     </div>
-    <!-- Passkey Form End -->
+    <!-- Password Input Form End -->
 
-    <!-- Main Content Start (Initially hidden) -->
-    <div id="mainContent" style="display: none;">
-        <!-- Your original site code goes here -->
-        <!-- Replace this comment with your HTML content -->
-        <!-- For example, you can paste the content you provided earlier here -->
-        <p class="text-center"><a href="/projects.html"><button id="gs">Get Started</button></a></p>
-        <!-- Add the rest of your original site content here -->
-
-        <!-- You can add the button here if it's not present in your original code -->
-        <p class="text-center"><a href="/projects.html"><button id="gs">Go to Main Page</button></a></p>
-    </div>
-    <!-- Main Content End -->
-
-    <!-- Visit Counter Code Start (Moved to the end) -->
+    <!-- Visit Counter Code Start -->
     <h1>Visit Counter</h1>
     
     <p>This page has been visited <span id="visitCount">0</span> times.</p>
@@ -63,40 +50,49 @@
     </script>
     <!-- Visit Counter Code End -->
 
+    <h1 id="title">
+        medrokian.github.io<br />
+        <span id="subtitle">...</span>
+    </h1>
+    
+    <!-- Main Content Start (Initially hidden) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Your original site code goes here -->
+        <!-- Replace this comment with your HTML content -->
+        <!-- For example, you can paste the content you provided earlier here -->
+        <p class="text-center"><a href="/projects.html"><button id="gs">Get Started</button></a></p>
+        <!-- Add your splash text here -->
+        <p id="splashText" class="text-center">This is your splash text.</p>
+        <!-- Add the rest of your original site content here -->
+        
+        <!-- You can add the button here if it's not present in your original code -->
+        <p class="text-center"><a href="/projects.html"><button id="gs">Go to Main Page</button></a></p>
+    </div>
+    <!-- Main Content End -->
+    
+    <!-- Include your other scripts and footer as usual -->
+    <script src="/js/main.js"></script>
+    <script src="/js/subtitle.js"></script>
+    <footer>
+        <link rel="stylesheet" type="text/css" href="css/cookiepopup.css" async />
+        <script src="js/cookiepopup.js" async></script>
+    </footer>
+    
     <script>
-        // Wait for the DOM to fully load
-        window.onload = function () {
-            // Define the correct passkey
-            const correctPasskey = "diabeetus"; // Password: diabeetus
-
-            // Function to reveal the main site content
-            function revealSite() {
-                // Remove the passkey form and display the main content
-                const passkeyForm = document.getElementById("passkeyForm");
-                const mainContent = document.getElementById("mainContent");
-                passkeyForm.remove();
-                mainContent.style.display = "block";
+        // Password validation and redirection
+        document.getElementById('passwordSubmitForm').addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            const password = document.getElementById('password').value;
+            
+            if (password === "diabeetus") { // Password set to "diabeetus"
+                // Correct password, show main content
+                document.getElementById('passwordForm').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            } else {
+                // Wrong password, redirect to rickroll.mp4
+                window.location.href = 'rickroll.mp4';
             }
-
-            // Check if the passkey is correct and reveal the site if it is
-            const userPasskey = localStorage.getItem('userPasskey');
-            if (userPasskey === correctPasskey) {
-                // Password is correct; reveal the main content of the site
-                revealSite();
-            }
-
-            // Add an event listener for form submission
-            const passwordForm = document.getElementById("passwordForm");
-            passwordForm.addEventListener("submit", function (event) {
-                event.preventDefault();
-                const passwordInput = document.getElementById("passkey").value;
-                if (passwordInput === correctPasskey) {
-                    // Password is correct; reveal the main content of the site
-                    localStorage.setItem('userPasskey', passwordInput);
-                    revealSite();
-                }
-            });
-        };
+        });
     </script>
 </body>
 </html>
