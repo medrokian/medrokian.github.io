@@ -12,6 +12,10 @@
     <meta name="author" content="medrokian" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    // Force a full page reload on manual refresh
+window.onbeforeunload = function() {
+    return true;
+}
 </head>
 <body>
     <!-- Visit Counter Code Start -->
