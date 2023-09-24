@@ -1,74 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" type="image/x-icon" href="/newfavicon.ico" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <title>medrokian.github.io</title>
-    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
-    <meta property="og:title" content="Welcome to medrokian.github.io, your best option for unblocked games on the internet." />
-    <meta property="og:site_name" content="medrokian.github.io" />
-    <meta property="og:description" content="Welcome to medrokian.github.io, your best option for unblocked games on the internet." />
-    <meta name="description" content="Welcome to medrokian.github.io, your best option for unblocked games on the internet." />
-    <meta name="author" content="medrokian" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Your head content here -->
 </head>
 <body>
-    <!-- Visit Counter Code Start -->
-    <h1>Visit Counter</h1>
-    
-    <p>This page has been visited <span id="visitCount">0</span> times.</p>
-
     <script>
-        // Function to increase the visit count
-        function increaseVisitCount() {
-            let count = localStorage.getItem('visitCount');
-            count = parseInt(count) || 0; // Parse the count as an integer or default to 0
-            count++;
-            localStorage.setItem('visitCount', count);
-            document.getElementById('visitCount').textContent = count;
+        // Define the correct passkey
+        const correctPasskey = "diabeetus"; // Password: diabeetus
+
+        // Function to hide the password characters
+        function hidePassword() {
+            const passwordInput = document.getElementById("passkey");
+            const passkey = passwordInput.value;
+            
+            // Replace each character with a dot
+            const hiddenPasskey = passkey.replace(/./g, "*");
+            passwordInput.value = hiddenPasskey;
         }
 
-        // Check if there is a stored visit count and display it
-        let count = localStorage.getItem('visitCount');
-        if (count) {
-            document.getElementById('visitCount').textContent = count;
+        // Function to reveal the main site content
+        function revealSite() {
+            // Remove the password input and display the main content
+            const passwordInput = document.getElementById("passkey");
+            const mainContent = document.getElementById("mainContent");
+            passwordInput.remove();
+            mainContent.style.display = "block";
         }
 
-        // Increment the visit count when the page loads
-        increaseVisitCount();
+        // Prompt the user for the passkey
+        const userPasskey = prompt("Enter the passkey to access " + window.location.hostname + ":");
+
+        // Check if the passkey is correct
+        if (userPasskey !== correctPasskey) {
+            // Redirect to an access denied page or show an error message
+            alert("Access denied. Please enter the correct passkey to access " + window.location.hostname + ".");
+            // Optionally, you can redirect to an access denied page
+            // window.location.href = "access_denied.html";
+        } else {
+            // Passkey is correct; reveal the main content of the site
+            revealSite();
+        }
+
+        // Add an event listener to hide the password after 1.5 seconds of inactivity
+        const passwordInput = document.getElementById("passkey");
+        let timer;
+
+        passwordInput.addEventListener("input", function () {
+            clearTimeout(timer);
+            timer = setTimeout(hidePassword, 1500); // 1.5 seconds delay
+        });
     </script>
-    <!-- Visit Counter Code End -->
 
-    <h1 id="title">
-        medrokian.github.io<br />
-        <span id="subtitle">...</span>
-    </h1>
-    <!-- Rest of your HTML content -->
-    
-    <!-- Include your other scripts and footer as usual -->
-    <p class="text-center"><a href="/projects.html"><button id="gs">Get Started</button></a></p>
-    <p id="intro" class="text-center">
-      Welcome to medrokian.github.io, your best option for unblocked games on the internet.<br />
-      But dont just take that from me, take it from the people who use this site!
-    </p>
-    <!-- Start Review section -->
-    <div class="flex-container">
-        <!-- Your review cards go here -->
+    <!-- Password input -->
+    <label for="passkey">Enter Password:</label>
+    <input type="password" id="passkey">
+
+    <!-- Main site content -->
+    <div id="mainContent" style="display: none;">
+        <!-- Include your main site content here -->
+        <!-- You can paste your main site content from your provided code below -->
+        <h1>Welcome to medrokian.github.io</h1>
+        <p>This is the main content of your website.</p>
+        <!-- Rest of your HTML content from your provided code -->
     </div>
-    <!-- End Review section -->
-    <p class="text-center">
-        What are you waiting for? Go find your next favorite game <a href="/projects.html">in our wide list of games</a>. Or you can view the <a href="/dump/changelog.txt">changelog here</a>!
-    </p>
-    <p class="text-center">
-        Or view more things I have made <a href="dump/redirect.html?to=%2Fdump%2Findex.html&local=true">here</a>.
-    </p>
-    <p class="text-center">© medrokian, 2022. Unauthorized use and/or duplication of this material without permission from 3kh0 is strictly prohibited. Please contact Echo at <a href="/dump/redirect.html?to=mailto%3Aecho-the-coder%40tuta.io&local=false">echo-the-coder@tuta.io</a> for information.</p>
-    <script src="/js/main.js"></script>
-    <script src="/js/subtitle.js"></script>
-    <footer>
-        <link rel="stylesheet" type="text/css" href="css/cookiepopup.css" async />
-        <script src="js/cookiepopup.js" async></script>
-    </footer>
 </body>
 </html>
