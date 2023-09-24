@@ -58,7 +58,7 @@
     </p>
 
     <!-- "Get Started" button -->
-    <p class="text-center">
+    <p id="getStartedText" class="text-center" style="display: none;">
        <a href="/projects.html"><button id="getStartedButton">Get Started</button></a>
     </p>
 
@@ -70,13 +70,6 @@
        or you can go to to the og 3kh0 (3kh0.github.io).
     </p>
     <p class="text-center">© medrokian, 2022. Unauthorized use and/or duplication of this material without permission from 3kh0 is strictly prohibited. Please contact Echo at <a href="/dump/redirect.html?to=mailto%3Aecho-the-coder%40tuta.io&local=false">echo-the-coder@tuta.io</a> for information.</p>
-    <script src="/js/main.js"></script>
-    <script src="/js/subtitle.js"></script>
-    <footer>
-        <link rel="stylesheet" type="text/css" href="css/cookiepopup.css" async />
-        <script src="js/cookiepopup.js" async></script>
-    </footer>
-
     <script>
         // Function to handle form submission
         document.getElementById("passwordForm").addEventListener("submit", function (event) {
@@ -87,19 +80,10 @@
 
             // Check if the password is correct
             if (password === "diabeetus") { // Password set to "diabeetus"
-                // Correct password, show main content
+                // Correct password, show "Get Started" button
                 document.getElementById('passwordForm').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
+                document.getElementById('getStartedText').style.display = 'block';
             } else {
                 // Incorrect password, redirect to rickroll.mp4
                 window.location.href = "/rickroll.mp4";
             }
-        });
-
-        // Force a full page reload on manual refresh
-        window.onbeforeunload = function() {
-            return true;
-        }
-    </script>
-</body>
-</html>
