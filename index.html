@@ -8,19 +8,6 @@
         // Define the correct passkey
         const correctPasskey = "diabeetus"; // Password: diabeetus
 
-        // Function to hide the password characters and reveal the content
-        function handlePasswordInput() {
-            const passwordInput = document.getElementById("passkey");
-            const passkey = passwordInput.value;
-            const hiddenPasskey = passkey.replace(/./g, "*");
-            passwordInput.value = hiddenPasskey;
-
-            if (passkey === correctPasskey) {
-                // Password is correct; reveal the main content of the site
-                revealSite();
-            }
-        }
-
         // Function to reveal the main site content
         function revealSite() {
             // Remove the password input and display the main content
@@ -30,28 +17,32 @@
             mainContent.style.display = "block";
         }
 
-        // Check if the passkey is already entered (e.g., on page refresh)
+        // Check if the passkey is correct and reveal the site if it is
         const userPasskey = localStorage.getItem('userPasskey');
         if (userPasskey === correctPasskey) {
             // Password is correct; reveal the main content of the site
             revealSite();
         }
 
-        // Add an event listener to handle password input
-        const passwordInput = document.getElementById("passkey");
-        passwordInput.addEventListener("input", handlePasswordInput);
-
-        // Add an event listener for Enter key press
-        passwordInput.addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                handlePasswordInput();
+        // Add an event listener for form submission
+        const passwordForm = document.getElementById("passwordForm");
+        passwordForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const passwordInput = document.getElementById("passkey").value;
+            if (passwordInput === correctPasskey) {
+                // Password is correct; reveal the main content of the site
+                localStorage.setItem('userPasskey', passwordInput);
+                revealSite();
             }
         });
     </script>
 
-    <!-- Password input -->
-    <label for="passkey">Enter Password:</label>
-    <input type="password" id="passkey">
+    <!-- Password input form -->
+    <form id="passwordForm">
+        <label for="passkey">Enter Password:</label>
+        <input type="password" id="passkey">
+        <button type="submit">Submit</button>
+    </form>
 
     <!-- Main site content -->
     <div id="mainContent" style="display: none;">
