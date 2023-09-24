@@ -14,7 +14,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <!-- Visit Counter Code Start -->
+    <!-- Passkey Form Start -->
+    <div id="passkeyForm">
+        <form id="passwordForm" action="/index.html"> <!-- Update the action to point to your main page -->
+            <label for="passkey">Enter Passkey:</label>
+            <input type="password" id="passkey">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- Passkey Form End -->
+
+    <!-- Main Content Start (Initially hidden) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Your original site code goes here -->
+        <!-- Replace this comment with your HTML content -->
+        <!-- For example, you can paste the content you provided earlier here -->
+        <p class="text-center"><a href="/projects.html"><button id="gs">Get Started</button></a></p>
+        <!-- Add the rest of your original site content here -->
+    </div>
+    <!-- Main Content End -->
+
+    <!-- Visit Counter Code Start (Moved to the end) -->
     <h1>Visit Counter</h1>
     
     <p>This page has been visited <span id="visitCount">0</span> times.</p>
@@ -39,31 +59,6 @@
         increaseVisitCount();
     </script>
     <!-- Visit Counter Code End -->
-
-    <h1 id="title">
-        medrokian.github.io<br />
-        <span id="subtitle">...</span>
-    </h1>
-
-    <!-- Passkey Form Start -->
-    <div id="passkeyForm" style="display: none;">
-        <form id="passwordForm" action="/index.html"> <!-- Update the action to point to your main page -->
-            <label for="passkey">Enter Passkey:</label>
-            <input type="password" id="passkey">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <!-- Passkey Form End -->
-
-    <!-- Main Content Start (Initially hidden) -->
-    <div id="mainContent" style="display: none;">
-        <!-- Your original site code goes here -->
-        <!-- Replace this comment with your HTML content -->
-        <!-- For example, you can paste the content you provided earlier here -->
-        <p class="text-center"><a href="/projects.html"><button id="gs">Get Started</button></a></p>
-        <!-- Add the rest of your original site content here -->
-    </div>
-    <!-- Main Content End -->
 
     <script>
         // Wait for the DOM to fully load
