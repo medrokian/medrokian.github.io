@@ -14,13 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <!-- Password Entry Form -->
-    <form id="passwordForm">
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Submit</button>
-    </form>
-
     <!-- Visit Counter Code Start -->
     <h1>Visit Counter</h1>
     
@@ -57,15 +50,30 @@
        <a href="/projects.html"><button id="getStartedButton">Get Started</button></a>
     </p>
 
-    <p class="text-center">
-        What are you waiting for? Go find your next favorite game <a href="/projects.html">in our wide list of games</a>. If you need help or forgot/don't have the password, contact me at medrokian@gmail.com.
+    <!-- Splash Text -->
+    <p id="intro" class="text-center">
+      Welcome to medrokian.github.io, your best option for unblocked games on the internet.<br />
+      But dont just take that from me, take it from the people who use this site!
     </p>
-
+    
+    <!-- Start Review section -->
+    <div class="flex-container">
+        <!-- Your review cards go here -->
+    </div>
+    <!-- End Review section -->
     <p class="text-center">
-        Or you can go to the original 3kh0 website at <a href="https://3kh0.github.io">3kh0.github.io</a>.
+        What are you waiting for? Go find your next favorite game <a href="/projects.html">in our wide list of games</a>. Or you can view the <a href="/dump/changelog.txt">changelog here</a>!
     </p>
-
-    <p class="text-center">© medrokian, 2022. Unauthorized use and/or duplication of this material without permission from 3kh0 is strictly prohibited. Please contact Echo at <a href="mailto:echo-the-coder@tuta.io">echo-the-coder@tuta.io</a> for information.</p>
+    <p class="text-center">
+        Or view more things I have made <a href="dump/redirect.html?to=%2Fdump%2Findex.html&local=true">here</a>.
+    </p>
+    <p class="text-center">© medrokian, 2022. Unauthorized use and/or duplication of this material without permission from 3kh0 is strictly prohibited. Please contact Echo at <a href="/dump/redirect.html?to=mailto%3Aecho-the-coder%40tuta.io&local=false">echo-the-coder@tuta.io</a> for information.</p>
+    <script src="/js/main.js"></script>
+    <script src="/js/subtitle.js"></script>
+    <footer>
+        <link rel="stylesheet" type="text/css" href="css/cookiepopup.css" async />
+        <script src="js/cookiepopup.js" async></script>
+    </footer>
 
     <script>
         // Function to handle form submission
