@@ -21,32 +21,6 @@
         <button type="submit">Submit</button>
     </form>
 
-    <!-- Visit Counter Code Start -->
-    <h1>Visit Counter</h1>
-    
-    <p>This page has been visited <span id="visitCount">0</span> times.</p>
-
-    <script>
-        // Function to increase the visit count
-        function increaseVisitCount() {
-            let count = localStorage.getItem('visitCount');
-            count = parseInt(count) || 0; // Parse the count as an integer or default to 0
-            count++;
-            localStorage.setItem('visitCount', count);
-            document.getElementById('visitCount').textContent = count;
-        }
-
-        // Check if there is a stored visit count and display it
-        let count = localStorage.getItem('visitCount');
-        if (count) {
-            document.getElementById('visitCount').textContent = count;
-        }
-
-        // Increment the visit count when the page loads
-        increaseVisitCount();
-    </script>
-    <!-- Visit Counter Code End -->
-
     <h1 id="title">
         medrokian.github.io<br />
         <span id="subtitle">...</span>
