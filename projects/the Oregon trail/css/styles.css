@@ -1,0 +1,159 @@
+html, body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+  background-color: black;
+  color: white;
+}
+.imgHeader {
+  background-image: url("../img/headerHome.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 350px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+ul {
+  font-size: 25px;
+}
+
+#gameScreen {
+  display: none;
+}
+
+.mourn, .talk, .restartGame, .crossRiver {
+  display: none;
+}
+
+.randomEvent {
+  text-align: center;
+  border: dotted 2px #00C100;
+  height: auto;
+  min-height: 61px;
+}
+
+.statsBox {
+  margin-top: 30px;
+  border-top-style: dashed;
+  border-right-style: dotted;
+  border-bottom-style: dashed;
+  border-color: #00C100;
+  border-size: 3px;
+  height: auto;
+  min-height: 524px;
+}
+
+.statsBox h2 {
+  color: #0076ff;
+  margin: 10px 0;
+}
+
+.statsBox h1 {
+  margin: 0;
+  font-size: 85px;;
+  color: #D103D5;
+}
+
+input[type = "text"] {
+  background-color: black;
+  border-bottom: dashed 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: white;
+  width: 300px;
+  font-size: 30px;
+  height: 35px;
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 20px;
+}
+
+h1#start{
+  /*color: #F45116;*/
+  color: #0076ff;
+  font-size: 50px;
+  margin-bottom: -6px;;
+}
+
+
+.btn, button {
+  color: black;
+  background-color: #00C100;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: solid 5px white;
+  width: 175px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.btn:hover, {
+  background-color: #0076ff;
+  color: white;
+}
+
+#trailScreen {
+  padding-top: 35px;
+  padding-left: 35px;
+}
+
+.restOutcome, .trailOutcome, .healOutcome, .mournOutcome, .huntOutcome, .gameOverLoseMessage, .gameOverWinScreen {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: solid 3px blue;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+span#randomEventMessage {
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+.events {
+  font-size: 40px;
+}
+
+.playAgain {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#checkPoint {
+  font-size: 40px;
+  color: #D103D5;
+}
+
+#memberSick {
+  color: #00C100;
+}
+
+#foodZero, #medicineZero {
+  color: red;
+}
