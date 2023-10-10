@@ -4,7 +4,7 @@ body {
   font-size: "25px";
   color: #ffffff;
   text-align: left;
-  background-color: #1c1c1c;
+  background-color: #0000CD;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -20,7 +20,7 @@ a {
   width: 300px;
 }
 .game-tile {
-  background-color: #949494;
+  background-color: #191970;
   height: 400px;
   width: 300px;
   border-radius: 30px;
