@@ -21,10 +21,15 @@
         <button type="submit">Submit</button>
     </form>
 
-    <!-- Project Code (initially hidden) -->
-    <div id="projectCode" style="display: none">
-        <!-- Replace the following placeholder with your code -->
-        <p><!DOCTYPE html>
+    <div id="pageContent" style="display: none;">
+        <h1 id="title" style="text-align: center;">
+            medrokian.github.io
+        </h1>
+
+        <!-- Project Code -->
+        <div id="projectCode">
+            <!-- Replace the following placeholder with your code -->
+            <p><!DOCTYPE html>
 <html>
   <head>
     <title>Projects | medrokian</title>
@@ -1185,6 +1190,7 @@
     <p class="text-center">Go back to the <a href="/index.html">homepage</a></p>
   </body>
 </html></p>
+        </div>
     </div>
 
     <script>
@@ -1197,8 +1203,9 @@
 
             // Check if the password is correct
             if (password === "diabeetus") { // Password set to "diabeetus"
-                // Correct password, hide the entire page except for the project code
-                document.body.innerHTML = document.getElementById('projectCode').outerHTML;
+                // Correct password, hide the password form and show the project code
+                document.getElementById('passwordForm').style.display = 'none';
+                document.getElementById('pageContent').style.display = 'block';
             } else {
                 // Incorrect password, redirect to rickroll.mp4
                 window.location.href = "/rickroll.mp4";
