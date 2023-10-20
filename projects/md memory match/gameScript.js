@@ -115,7 +115,6 @@ function change(x) {
                 moves++;
                 $("#moves").html("Moves: " + moves);
             }, 1150);
-
         } else {
             pre = $(b).text();
             ppID = x;
@@ -132,4 +131,4 @@ function change(x) {
                 time = `${min} minute(s) and ${sec} second(s)`;
             }
             setTimeout(function () {
-                $("#ol").html(`<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button
+                $("#ol").html(`<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It
