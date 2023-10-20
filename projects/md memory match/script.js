@@ -1,13 +1,14 @@
 const cardData = {
     1: ['uzi.jpg', 'n.jpg', 'v.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg'],
-    2: ['uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg'],
-    3: ['uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'tessa.jpg', 'uzidad.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'tessa.jpg', 'uzidad.jpg'],
+    2: ['uzi.jpg', 'n.jpg', 'v.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'doll.jpg', 'cyn.jpg'],
+    3: ['uzi.jpg', 'n.jpg', 'v.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'doll.jpg', 'cyn.jpg', 'tessa.jpg', 'uzidad.jpg', 'tessa.jpg', 'uzidad.jpg'],
 };
 
 let level = 1;
 let cards = [];
 let cardsFlipped = 0;
-let firstCard, secondCard;
+let firstCard = null;
+let secondCard = null;
 let lockBoard = false;
 
 function startGame(selectedLevel) {
@@ -17,7 +18,7 @@ function startGame(selectedLevel) {
     firstCard = null;
     secondCard = null;
     lockBoard = false;
-    
+
     const gameBoard = document.getElementById('game-board');
     gameBoard.innerHTML = '';
 
@@ -27,54 +28,56 @@ function startGame(selectedLevel) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.value = cardFaces[i];
-        card.innerHTML = `<img src="back.svg" class="back" alt="Card Back"><img src="${cardFaces[i]}" class="front" alt="Card Face">`;
+        card.innerHTML = `<div class="card-inner">
+            <div class="card-face card-back"></div>
+            <div class="card-face card-front"><img src="${cardFaces[i]}" alt="Card Face"></div>
+        </div>`;
         card.addEventListener('click', flipCard);
         gameBoard.appendChild(card);
     }
 }
 
 function flipCard() {
-    if (lockBoard) return;
-    if (this === firstCard) return;
+    if (lockBoard || this === firstCard || this.classList.contains('flip')) return;
 
     this.classList.add('flip');
 
     if (!firstCard) {
         firstCard = this;
-        return;
+    } else {
+        secondCard = this;
+        checkForMatch();
     }
-
-    secondCard = this;
-    checkForMatch();
 }
 
 function checkForMatch() {
-    const isMatch = firstCard.dataset.value === secondCard.dataset.value;
-    isMatch ? disableCards() : unflipCards();
+    if (firstCard.dataset.value === secondCard.dataset.value) {
+        disableCards();
+        playAudio('audio-good');
+
+        if (cardsFlipped === level * 2) {
+            playAudio('audio-win');
+        }
+    } else {
+        lockBoard = true;
+        playAudio('audio-fail');
+        setTimeout(() => {
+            unflipCards();
+        }, 1000);
+    }
 }
 
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     cardsFlipped += 2;
-
-    if (cardsFlipped === level * 2) {
-        playAudio('audio-win');
-    } else {
-        playAudio('audio-good');
-    }
-
     resetBoard();
 }
 
 function unflipCards() {
-    lockBoard = true;
-    playAudio('audio-fail');
-    setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
-        resetBoard();
-    }, 1000);
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+    resetBoard();
 }
 
 function resetBoard() {
