@@ -1,0 +1,32 @@
+/* gameStyle.css - Customize as needed */
+
+body {
+    font-family: 'Biryani', sans-serif;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #4481eb 0%, #04bedd 100%);
+}
+
+p {
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+td {
+    background-color: transparent;
+    height: 70px;
+    width: 70px;
+}
+
+/* Add your custom styling here */
+
+/* Example: Customize the card appearance */
+.inner .front {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Add custom styling for front of the card */
+}
+
+/* Example: Customize the card appearance */
+.inner .back {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Add custom styling for back of the card */
+}
