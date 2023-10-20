@@ -28,10 +28,12 @@ function startGame(selectedLevel) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.value = cardFaces[i];
-        card.innerHTML = `<div class="card-inner">
-            <div class="card-face card-back"></div>
-            <div class="card-face card-front"><img src="${cardFaces[i]}" alt="Card Face"></div>
-        </div>`;
+        card.innerHTML = `
+            <div class="card-inner">
+                <div class="card-back"><img src="back.svg" alt="Card Back"></div>
+                <div class="card-front"><img src="${cardFaces[i]}" alt="Card Face"></div>
+            </div>
+        `;
         card.addEventListener('click', flipCard);
         gameBoard.appendChild(card);
     }
@@ -92,4 +94,3 @@ function playAudio(audioId) {
 }
 
 startGame(1);
- 
