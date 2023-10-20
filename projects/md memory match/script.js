@@ -92,3 +92,4 @@ function playAudio(audioId) {
 }
 
 startGame(1);
+ 
