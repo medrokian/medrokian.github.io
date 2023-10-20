@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Memory Match Game</title>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-board" id="game-board">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+        <div class="level">
+            <button onclick="startGame(1)">Level 1 (6 cards)</button>
+            <button onclick="startGame(2)">Level 2 (10 cards)</button>
+            <button onclick="startGame(3)">Level 3 (14 cards)</button>
+        </div>
+    </div>
+    <audio id="audio-fail" src="fail.mp3"></audio>
+    <audio id="audio-good" src="good.mp3"></audio>
+    <audio id="audio-win" src="win.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
