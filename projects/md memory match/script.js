@@ -1,8 +1,7 @@
-// Define your card data for each level
 const cardData = {
     1: ['uzi.jpg', 'n.jpg', 'v.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg'],
-    2: ['uzi.jpg', 'n.jpg', 'v.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'doll.jpg', 'cyn.jpg'],
-    3: ['uzi.jpg', 'n.jpg', 'v.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'doll.jpg', 'cyn.jpg', 'tessa.jpg', 'uzidad.jpg', 'tessa.jpg', 'uzidad.jpg'],
+    2: ['uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg'],
+    3: ['uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'tessa.jpg', 'uzidad.jpg', 'uzi.jpg', 'n.jpg', 'v.jpg', 'doll.jpg', 'cyn.jpg', 'tessa.jpg', 'uzidad.jpg'],
 };
 
 let level = 1;
