@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Memory Match Game</title>
+    <title>Memory Matching Game</title>
+    <link rel="shortcut icon" type="image/jpg" href="Images/fevicon.PNG"/>
+    <link rel="stylesheet" href="gameStyle.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="gameScript.js"></script>
 </head>
 <body>
-    <div class="game-container">
-        <div class="game-board" id="game-board">
-            <!-- Cards will be dynamically generated here -->
-        </div>
-        <div class="level">
-            <button onclick="startGame(1)">Level 1 (6 cards)</button>
-            <button onclick="startGame(2)">Level 2 (10 cards)</button>
-            <button onclick="startGame(3)">Level 3 (14 cards)</button>
-        </div>
+    <div id="ol"></div>
+    <div style="height: 8px;"></div>
+    <div id="title">
+        <span id="logo">MEMORY MATCHING GAME</span>
     </div>
-    <audio id="audio-fail" src="fail.mp3"></audio>
-    <audio id="audio-good" src="good.mp3"></audio>
-    <audio id="audio-win" src="win.mp3"></audio>
-    <script src="script.js"></script>
+
+    <div id="title" style="height: 40px;">
+        <span id="moves"></span>
+        <span id="time"></span>
+    </div>
+
+    <center>
+        <table cellspacing="0"></table>
+    </center>
 </body>
 </html>
