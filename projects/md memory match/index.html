@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>medrokian: murder drones Memory Match</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <link href="assets/css/grid.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body onload="shuffleCards()">
+    <div class="container main-container">
+      <div class="row">
+        <header class="header">
+          <div class="title-container">
+            <h1 class="title-text">murder drones Memory Match</h1>
+          </div>
+        </header>
+      </div>
+      <div class="row">
+        <aside class="aside col-2">
+          <div class="games-container">
+            <h4 class="games-text">Games:</h4>
+          </div>
+          <div class="games-score-container">
+            <h4 class="games-score">0</h4>
+          </div>
+          <div class="matches-container">
+            <h4 class="matches-text">Matches:</h4>
+          </div>
+          <div class="matches-score-container">
+            <h4 class="matches-score">0</h4>
+          </div>
+          <div class="attempts-container">
+            <h4 class="attempts-text">Attempts:</h4>
+          </div>
+          <div class="attempts-score-container">
+            <h4 class="attempts-score">0</h4>
+          </div>
+          <div class="accuracy-container">
+            <h4 class="accuracy-text">Accuracy:</h4>
+          </div>
+          <div class="accuracy-score-container">
+            <h4 class="accuracy-score">0%</h4>
+          </div>
+          <button class="shuffle-button">Click To Reset</button>
+          <video autoplay muted loop class="video-bg">
+            <source src="./assets/videos/nebula.mp4" />
+          </video>
+        </aside>
+        <main class="main col-10" id="gameCards">
+          <div class="card-item col-2">
+            <div class="card-front uzi"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front uzi"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front cyn"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front cyn"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front tessa"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front tessa"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front j"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front j"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front v"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front v"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front n"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front n"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front thad"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front thad"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front doll"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front doll"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front nori"></div>
+            <div class="card-back"></div>
+          </div>
+          <div class="card-item col-2">
+            <div class="card-front nori"></div>
+            <div class="card-back"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="modal hidden">
+      <div class="modal-text">
+        <span class="close">&times;</span>
+        <h3>Congratulations! You have won!!!</h3>
+        <button class="reset"><span>Play Again </span></button>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
