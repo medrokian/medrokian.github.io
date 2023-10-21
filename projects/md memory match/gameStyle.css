@@ -1,4 +1,4 @@
-/* Add your CSS styles here */
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap');
 
 * {
     font-family: 'Biryani', sans-serif;
@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    margin: 0px;
+    margin: 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#4481eb), to(#04bedd));
     background-image: -o-linear-gradient(top, #4481eb 0%, #04bedd 100%);
     background-image: linear-gradient(to bottom, #4481eb 0%, #04bedd 100%);
@@ -42,7 +42,7 @@ table {
     margin-top: 16vh;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 0.2px solid #ffff;
+    border: 0.2px solid #fff;
     border-radius: 10px;
     padding: 5px;
 }
@@ -54,11 +54,11 @@ table {
 
 button {
     background-color: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: (20px);
+    backdrop-filter: (20px);
     color: white;
     margin: 5px;
-    border: 0.1px solid #ffff;
+    border: 0.1px solid #fff;
     border-radius: 10px;
     font-weight: smaller;
     width: 100px;
@@ -90,7 +90,7 @@ button {
     backdrop-filter: blur(15px);
     border-radius: 10px;
     margin: 8px;
-    margin-top: 0px;
+    margin-top: 0;
     color: white;
     height: 56px;
     text-align: center;
