@@ -1,0 +1,767 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-bg {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+  z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.title-text {
+  font-size: 5rem;
+  letter-spacing: 25px;
+  font-family: "Inconsolata", monospace;
+  color: #EEC643;
+}
+
+.aside {
+  font-family: "Inconsolata", monospace;
+  font-size: 1.5rem;
+  color: #FFF;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.aside > div {
+  background-color: rgba(238, 198, 67, 0.5);
+  text-align: center;
+  height: 9%;
+  width: 80%;
+  border-radius: 15px;
+  border: 2px groove #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.aside div h4 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 15%;
+}
+
+.games-score, .matches-score, .attempts-score, .accuracy-score {
+  color: #00FF00;
+}
+
+.start {
+  font-family: "Inconsolata", monospace;
+  font-size: 1.75rem;
+  margin-top: 6%;
+  width: 80%;
+  height: 10%;
+  background-color: #EEC643;
+  border-width: 0;
+  border-radius: 15px;
+  font-weight: bold;
+  font-style: italic;
+  border: 2px double #000;
+  outline: none;
+  cursor: pointer;
+}
+
+.start:hover {
+  background-color: #6D5A1F;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.start:active {
+  background-color: #6D5A1F;
+  box-shadow: 0 5px #EEF0F2;
+  transform: translateY(4px);
+}
+
+.shuffle-button {
+  font-family: "Inconsolata", monospace;
+  font-size: 1.75rem;
+  margin-top: 6%;
+  width: 80%;
+  height: 10%;
+  background-color: #EEC643;
+  border-width: 0;
+  border-radius: 15px;
+  font-weight: bold;
+  font-style: italic;
+  border: 2px groove #000;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  color: #000;
+}
+
+.shuffle-button:hover {
+  background-color: #6D5A1F;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  color: #EA2B1F;
+}
+
+.shuffle-button:active {
+  background-color: #6D5A1F;
+  box-shadow: 0 5px darkgray;
+  transform: translateY(4px);
+}
+
+.shuffle-button:after {
+  content: "";
+  background: #C3A337;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.shuffle-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  margin: 3px;
+  height: 30%;
+  padding: 0;
+  position: relative;
+}
+
+.card-front, .card-back {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 15px;
+}
+
+.card-back {
+  background-image: url("../images/back.jpg");
+  transition: transform .2s;
+}
+
+.card-back:hover {
+  border: 1px groove #f0f;
+  transform: scale(1.1);
+  box-shadow:
+        0 0 30px 15px #fff,
+        0 0 50px 30px #f0f,
+        0 0 70px 45px #0ff;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.uzi {
+  background-image: url("../images/uzi.jpg");
+}
+
+.cyn {
+  background-image: url("../images/cyn.jpg");
+}
+
+.j {
+  background-image: url("../images/j.jpg");
+}
+
+.v {
+  background-image: url("../images/v.jpg");
+}
+
+.n {
+  background-image: url("../images/v.jpg");
+}
+
+.tessa {
+  background-image: url("../images/tessa.jpg");
+}
+
+.thad {
+  background-image: url("../images/thad.jpg");
+}
+
+.doll {
+  background-image: url("../images/doll.jpg");
+}
+
+.nori {
+  background-image: url("../images/nori.jpg");
+}
+
+.modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: auto;
+  width: auto;
+  z-index: 1000;
+	min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-text {
+  background-image: url("../images/fireworks.gif");
+  font-family: "Inconsolata", monospace;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  height: 400px;
+}
+
+.modal-text h3 {
+  color: #00FF00;
+  letter-spacing: 10px;
+}
+
+.close {
+  font-size: 5rem;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+.close:active {
+  transform: translateY(4px);
+}
+
+.reset {
+  font-family: "Inconsolata", monospace;
+  font-size: 1.75rem;
+  height: 50px;
+  width: 250px;
+  background-color: #C3A337;
+  border-width: 0;
+  border-radius: 10px;
+  border: 0.5px ridge black;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reset span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.reset span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.reset:hover {
+  background-color: #6D5A1F;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  color: #EA2B1F;
+}
+
+.reset:hover span {
+  padding-right: 25px;
+}
+
+.reset:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.reset:active {
+  background-color: #6D5A1F;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media only screen and (max-width: 309px) {
+  .title-text {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .aside {
+    font-size: 0.5rem;
+  }
+
+  .aside > div {
+    align-items: flex-end;
+  }
+
+  .shuffle-button {
+    font-size: 0.5rem;
+  }
+
+  .card-item {
+    height: 30%;
+    width: 12%;
+  }
+
+  .modal {
+    height: 200px;
+    width: 275px;
+  }
+
+  .modal-text h3 {
+    font-size: 0.8rem;
+  }
+
+  .reset {
+    font-size: 0.75rem;
+    height: 20px;
+    width: 40%;
+  }
+
+  .close {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small devices (phones, 310px and up) */
+@media only screen and (min-width: 310px) and (max-width: 509px) {
+  .title-text {
+    font-size: 2.75rem;
+    letter-spacing: 5px;
+    text-align: center;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 35px;
+  }
+
+  .aside {
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 75px;
+    left: 8px;
+    justify-content: space-between;
+  }
+
+  .games-score,
+  .matches-score,
+  .attempts-score,
+  .accuracy-score {
+    width: 30px;
+  }
+
+  .aside > div {
+    height: 5%;
+    margin: 0 1px;
+  }
+
+  .shuffle-button {
+    font-size: 0.5rem;
+    height: 37px;
+    position: relative;
+    bottom: 1px;
+    overflow: visible;
+  }
+
+  .games-text,
+  .matches-text,
+  .attempts-text,
+  .accuracy-text {
+    margin-left: 2px;
+    font-size: 0.5rem;
+  }
+
+  #gameCards {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-item {
+    height: 30%;
+    width: 14%;
+  }
+
+  .main {
+    height: 50%;
+    position: relative;
+    right: 28px;
+    width: 375px;
+    bottom: 25px;
+  }
+
+  .main > div {
+    margin: 0 4px;
+  }
+
+  .modal-text h3 {
+    font-size: 1.15rem;
+  }
+
+  .modal-text {
+    height: 200px;
+    width: 350px;
+  }
+
+  .reset {
+    font-size: 0.9rem;
+    height: 30px;
+    width: 40%;
+  }
+
+  .close {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (min-width: 510px) and (max-width: 599px) {
+  .title-text {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .aside {
+    font-size: 0.9rem;
+  }
+
+  .aside > div {
+    align-items: flex-start;
+  }
+
+  .aside div h4 {
+    position: relative;
+    top: 10%;
+  }
+
+  .shuffle-button {
+    font-size: 0.9rem;
+  }
+
+  .card-item {
+    height: 30%;
+    width: 15%;
+  }
+
+  .modal {
+    height: 250px;
+    width: 500px;
+  }
+
+  .modal-text h3 {
+    font-size: 1.15rem;
+  }
+
+  .reset {
+    font-size: 0.9rem;
+    height: 30px;
+    width: 30%;
+  }
+
+  .close {
+    font-size: 2rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .title-text {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-align: center;
+  }
+
+  .title-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .aside {
+    font-size: 1rem;
+  }
+
+  .aside > div {
+    align-items: flex-start;
+  }
+
+  .games-text,
+  .games-score,
+  .matches-text,
+  .matches-score,
+  .attempts-text,
+  .attempts-score,
+  .accuracy-text,
+  .accuracy-score {
+    position: relative;
+    top: 5px;
+  }
+
+  .shuffle-button {
+    font-size: 1rem;
+  }
+
+  .card-item {
+    height: 30%;
+    width: 15%;
+  }
+
+  .modal-text {
+    height: 250px;
+    width: 500px;
+  }
+
+  .modal-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .reset {
+    font-size: 1rem;
+    height: 30px;
+    width: 30%;
+  }
+
+  .close {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 638px) and (orientation: landscape) {
+  body {
+    background-size: 125% 125%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    background-size: 350% 350%;
+  }
+
+  .title-text {
+    font-size: 3.75rem;
+    letter-spacing: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .aside {
+    font-size: 1.25rem;
+  }
+
+  .aside > div {
+    align-items: flex-end;
+  }
+
+  .shuffle-button {
+    font-size: 1.25rem;
+  }
+
+  .games-text,
+  .games-score,
+  .matches-text,
+  .matches-score,
+  .attempts-text,
+  .attempts-score,
+  .accuracy-text,
+  .accuracy-score {
+    position: relative;
+    top: 4px;
+  }
+
+  .card-item {
+    height: 30%;
+    width: 15%;
+  }
+
+  .modal {
+    height: 300px;
+    width: 700px;
+  }
+
+  .modal-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .reset {
+    font-size: 1rem;
+    height: 40px;
+    width: 25%;
+  }
+
+  .close {
+    font-size: 3rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .title-text {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    width: 100%;
+  }
+
+  .aside {
+    font-size: 1.25rem;
+  }
+
+  .aside > div {
+    align-items: flex-start;
+  }
+
+  .shuffle-button {
+    font-size: 1.5rem;
+  }
+
+  .games-text,
+  .games-score,
+  .matches-text,
+  .matches-score,
+  .attempts-text,
+  .attempts-score,
+  .accuracy-text,
+  .accuracy-score {
+    position: relative;
+    top: 0.1px;
+  }
+
+  .card-item {
+    height: 30%;
+    width: 15%;
+  }
+
+  .modal {
+    height: 325px;
+    width: 950px;
+  }
+
+  .modal-text h3 {
+    font-size: 2rem;
+  }
+
+  .reset {
+    font-size: 1.25rem;
+    height: 40px;
+    width: 20%;
+  }
+
+  .close {
+    font-size: 3.5rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .title-text {
+    font-size: 5rem;
+    letter-spacing: 10px;
+    width: 100%;
+  }
+
+  .aside {
+    font-size: 1.5rem;
+  }
+
+  .aside > div {
+    align-items: flex-end;
+  }
+
+  .shuffle-button {
+    font-size: 1.5rem;
+  }
+
+  .modal {
+    height: 350px;
+    width: 1000px;
+  }
+
+  .games-text,
+  .games-score,
+  .matches-text,
+  .matches-score,
+  .attempts-text,
+  .attempts-score,
+  .accuracy-text,
+  .accuracy-score {
+    position: relative;
+    top: 7px;
+  }
+
+  .modal-text h3 {
+    font-size: 2.25rem;
+  }
+
+  .reset {
+    font-size: 1.5rem;
+    height: 40px;
+    width: 22%;
+  }
+
+  .close {
+    font-size: 4rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
