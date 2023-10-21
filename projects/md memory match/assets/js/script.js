@@ -11,7 +11,7 @@ const bodyElement = document.querySelector('body');
 
 let firstCardClicked, secondCardClicked, firstCardClasses, secondCardClasses, maxMatches, matches, gamesPlayed, attempts, accuracy;
 
-const cardDeck = ['uzi', 'j', 'v', 'n', 'doll', 'thad', 'tessa', 'nori', 'cyn', 'uzi', 'j', 'v', 'n', 'doll', 'thad', 'tessa', 'nori', 'cyn'];
+const cardDeck = ['uzi', 'j', 'V', 'N', 'doll', 'Thad', 'tessa', 'nori', 'Cyn', 'uzi', 'j', 'V', 'N', 'doll', 'Thad', 'tessa', 'nori', 'Cyn'];
 
 accuracy = 0;
 attempts = 0;
