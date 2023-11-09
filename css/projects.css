@@ -7,6 +7,27 @@ body {
   background-color: #021cbf;
   background-repeat: no-repeat;
   background-size: cover;
+}    color: white;
+    }
+
+.console-button {
+  background-color: #000D7E; /* Darker blue for buttons */
+  color: white;
+ }
+
+.console-button:hover {
+   background-color: #021CBF; /* Slightly lighter blue on hover */
+}
+
+.credit, button {
+  color: white;
+}
+
+button {
+  background-color: #000D7E; /* Darker blue for the "What is this?" button */
+    }
+ button:hover {
+  background-color: #021CBF; /* Slightly lighter blue on hover for the "What is this?" button */
 }
 a {
   text-decoration: none;
