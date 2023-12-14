@@ -14,18 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <!-- Password Entry Form -->
-    <form id="passwordForm">
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <div id="pageContent" style="display: none;">
-        <h1 id="title" style="text-align: center;">
-           "the site"
-        </h1>
-
         <!-- Project Code -->
         <div id="projectCode">
             <!-- Replace the following placeholder with your code -->
@@ -1233,21 +1221,6 @@
     </div>
 
     <script>
-        // Function to handle form submission
-        document.getElementById("passwordForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-
-            // Get the entered password
-            const password = document.getElementById("password").value;
-
-            // Check if the password is correct
-            if (password === "diabeetus1") { // Password set to "diabeetus"
-                // Correct password, hide the password form and show the project code
-                document.getElementById('passwordForm').style.display = 'none';
-                document.getElementById('pageContent').style.display = 'block';
-            } else {
-                // Incorrect password, redirect to rickroll.mp4
-                window.location.href = "/rickroll.mp4";
             }
         });
     </script>
